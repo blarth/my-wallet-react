@@ -1,6 +1,6 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { AuthProvider } from "./contexts/AuthContext";
-import {Login , Register} from "./pages";
+import {Login} from "./pages";
 
 
 export default function App() {
@@ -9,7 +9,7 @@ export default function App() {
         <BrowserRouter>
           <Routes>
             <Route path="/" element={<Login />} />
-            <Route path="/register" element={<Register />} />
+            {/* <Route path="/register" element={<Register />} /> */}
           </Routes>
         </BrowserRouter>
     </AuthProvider>
