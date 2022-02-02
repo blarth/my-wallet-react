@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const BASE_URL = process.env.BASE_URL;
+const BASE_URL = "http://localhost:5000"
 
 function createConfig(token) {
   return { headers: { Authorization: `Bearer ${token}` } };
@@ -17,11 +17,19 @@ function login(body) {
   
     return promise;
   }
+
+function getEntries(token){
+  const config = createConfig(token)
+  const promise = axios.get(`${BASE_URL}/wallet`, config );
+  
+    return promise
+}
   
 
   const api = {
     login,
     signUp,
+    getEntries,
     
   }
   

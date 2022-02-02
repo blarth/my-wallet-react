@@ -24,11 +24,14 @@ export default function Login() {
     setIsLoading(true);
     
     try {
-        const promisse = await api.login({ ...formData })
+        await api.login({ ...formData }).then((response) => {
+          
+          login(response.data);
+        })
+        
         setIsLoading(false);
-
-        login(promisse.response.data);
-        /* navigate("/wallet") */
+        
+        navigate("/wallet")
         
     } catch (error) {
         setIsLoading(false);
