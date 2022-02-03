@@ -3,6 +3,7 @@ import styled from 'styled-components';
 
 
 export default function Entry({_id, value, description, type, date}) {
+  
   return (
     <Container>
       <TextDate>{date}</TextDate>

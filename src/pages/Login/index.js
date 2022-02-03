@@ -7,10 +7,10 @@ import useAuth from "../../hooks/useAuth";
 import { Container, Form, Input, Button, StyledLink } from "../../components/formsComponents";
 import styled from "styled-components";
 
-export default function Login() {
+export default function Login({setNameUser}) {
   const [formData, setFormData] = useState({ email: '', password: '' })
   const [isLoading, setIsLoading] = useState(false);
-  const { auth, login } = useAuth();
+  const { login } = useAuth();
   const navigate = useNavigate();
 
 
@@ -26,10 +26,12 @@ export default function Login() {
     try {
         await api.login({ ...formData }).then((response) => {
           
-          login(response.data);
+          login(response.data.token);
+          setNameUser(response.data.name)
         })
         
         setIsLoading(false);
+
         
         navigate("/wallet")
         
