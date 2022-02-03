@@ -17,13 +17,14 @@ export default function Wallet() {
     
     function logout(){
         login("")
-        /* navigate("/") */
+        /*  navigate("/")  */
     }
 
 
     async function loadEntries() {
         
         try {
+            
             const promise =  await api.getEntries(auth).then((response) => {
                 setEntries(response.data);
                 
@@ -34,7 +35,7 @@ export default function Wallet() {
         
     }
     function loadBalance(){
-        entries?.map((entry) => {entry.type === "in" ? setBalance(balance + entry.value) : setBalance(balance - entry.value)
+        entries?.map((entry) => {entry.type === "in" ? setBalance(balance + parseFloat(entry.value)) : setBalance(balance - parseFloat(entry.value))
         if(balance < 0){
             setBalanceType("negative")
         }
@@ -45,7 +46,7 @@ export default function Wallet() {
     }
 
     useEffect(loadEntries, []);
-    useEffect(loadBalance, [entries])
+    useEffect(loadBalance, [])
    
 
   return (

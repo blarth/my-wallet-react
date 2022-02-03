@@ -1,0 +1,85 @@
+
+import { Button, Form, Input, Container } from "../../components/formsComponents";  
+import { ThreeDots } from "react-loader-spinner";
+import { useContext, useState } from "react";
+import api from "../../services/api";
+import { useLocation, useNavigate } from "react-router";
+import useAuth from "../../hooks/useAuth";
+import styled from "styled-components";
+
+export default function NewEntry() {
+    const { auth, login } = useAuth();
+    const navigate = useNavigate()
+    const  pathname  = useLocation().pathname.replace("/", "")
+    const [formData, setFormData] = useState({ value: '', description: '' })
+    const [isLoading, setIsLoading] = useState(false);
+    
+
+    function handleChange(e) {
+        setFormData({ ...formData, [e.target.name]: e.target.value });
+    }
+    async function handleSubmit(e) {
+        e.preventDefault();
+        const validationValue = /^[0-9]*\,[0-9]{2}$/.test(formData.value)
+    
+        if(!validationValue){
+            alert("Value must be in the format (100,00)")
+            return
+        }
+        
+        setIsLoading(true);
+        try {
+            console.log({...formData, type: pathname})
+            
+            await api.registerTransaction({...formData, type:pathname}, auth)
+            setIsLoading(false);
+            navigate("/wallet");
+            } catch (error) {
+            setIsLoading(false);
+            alert((error.response.data))
+            }
+        }
+        return(
+            <Container>
+                <Header>Nova {pathname === "in" ? "entrada" : "saída"}</Header>
+                <Form onSubmit={handleSubmit}>
+                    <Input
+                        type="text"
+                        placeholder="Valor"
+                        name="value"
+                        onChange={handleChange}
+                        value={formData.value}
+                        disabled={isLoading}
+                        required
+                    />
+                    <Input
+                        type="text"
+                        placeholder="Descrição"
+                        name="description"
+                        onChange={handleChange}
+                        value={formData.description}
+                        disabled={isLoading}
+                        required
+                    />
+    
+                    <Button type="submit" disabled={isLoading}>
+                    {
+                        isLoading
+                        ? <ThreeDots type="ThreeDots" color="#FFFFFF" height={50} width={50} />
+                        : `Salvar ${pathname === "in" ? "entrada" : "saída"}`
+                    }
+                    </Button>
+                </Form>
+            </Container>
+        )
+}
+
+const Header = styled.header`
+    margin: 25px 0 10px;
+    font-weight: bold;
+    font-size: 26px;
+    line-height: 31px;
+    color: #FFFFFF;
+    
+    align-self:flex-start;
+`

@@ -24,12 +24,19 @@ function getEntries(token){
   
     return promise
 }
+function registerTransaction(body, token){
+  const config = createConfig(token)
+  const promise = axios.post(`${BASE_URL}/entries`, body , config );
+  
+    return promise
+}
   
 
   const api = {
     login,
     signUp,
     getEntries,
+    registerTransaction,
     
   }
   
