@@ -3,7 +3,8 @@ import { useNavigate } from 'react-router-dom';
 import {BallTriangle} from 'react-loader-spinner';
 import Logo from "../../assets/img/MyWallet.png";
 import api from "../../services/api";
-import { Container, Form, Input, Button, StyledLink } from "../../components/formsComponents";
+import {  Form, Input, Button, StyledLink } from "../../components/formsComponents";
+import Container from "../../components/Container";
 
 export default function Register() {
   const navigate = useNavigate();
@@ -15,15 +16,14 @@ export default function Register() {
   }
 
   async function handleSubmit(e) {
-      console.log(formData.password)
-      console.log(formData.confirmpassword)
+      
     if(formData.password !== formData.confirmpassword){
         alert("Passwords should match")
         return
     }
     e.preventDefault();
     delete formData.confirmpassword
-    console.log(formData)
+    
     try {
         setIsLoading(true);
         const promise = await api.signUp({

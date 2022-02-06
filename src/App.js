@@ -1,6 +1,6 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { AuthProvider } from "./contexts/AuthContext";
-import {Login, Register, Wallet, NewEntry} from "./pages";
+import {Login, Register, Wallet, NewEntry, ChangeEntry} from "./pages";
 import { useState } from "react";
 
 
@@ -16,6 +16,7 @@ export default function App() {
             <Route path="/wallet" element={<Wallet nameUser={nameUser} />} />
             <Route path="/in" element={<NewEntry />} />
             <Route path="/out" element={<NewEntry />} />
+            <Route path="/entrie/:idEntry" element={<ChangeEntry />}/>
           </Routes>
         </BrowserRouter>
     </AuthProvider>

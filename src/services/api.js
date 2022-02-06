@@ -30,13 +30,28 @@ function registerTransaction(body, token){
   
     return promise
 }
+
+function registerChange(body, idEntry, token){
+  const config = createConfig(token)
+  const promise = axios.put(`${BASE_URL}/entry/${idEntry}`, body , config );
   
+    return promise
+}
+
+function getEntryById(idEntry, token){
+  const config = createConfig(token)
+  const promise = axios.get(`${BASE_URL}/entry/${idEntry}`, config );
+  
+    return promise
+}
 
   const api = {
     login,
     signUp,
     getEntries,
     registerTransaction,
+    registerChange,
+    getEntryById,
     
   }
   

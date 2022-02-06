@@ -2,14 +2,15 @@ import {
   Button,
   Form,
   Input,
-  Container,
+  
 } from "../../components/formsComponents";
 import { ThreeDots } from "react-loader-spinner";
 import { useState } from "react";
 import api from "../../services/api";
 import { useLocation, useNavigate } from "react-router";
 import useAuth from "../../hooks/useAuth";
-import styled from "styled-components";
+import Container from "../../components/Container";
+import Header from "./style";
 
 export default function NewEntry() {
   const { auth} = useAuth();
@@ -79,13 +80,3 @@ export default function NewEntry() {
     </Container>
   );
 }
-
-const Header = styled.header`
-  padding-left: 20px;
-  font-weight: bold;
-  font-size: 26px;
-  line-height: 31px;
-  color: #ffffff;
-  
-  align-self: flex-start;
-`;

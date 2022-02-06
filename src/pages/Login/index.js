@@ -4,8 +4,10 @@ import { useState } from "react";
 import Logo from "../../assets/img/MyWallet.png";
 import api from "../../services/api";
 import useAuth from "../../hooks/useAuth";
-import { Container, Form, Input, Button, StyledLink } from "../../components/formsComponents";
-import styled from "styled-components";
+import { Form, Input, Button, StyledLink } from "../../components/formsComponents";
+import Container from "../../components/Container";
+import StyledLogo from "./style";
+
 
 export default function Login({setNameUser}) {
   const [formData, setFormData] = useState({ email: '', password: '' })
@@ -82,6 +84,3 @@ export default function Login({setNameUser}) {
   );
 }
 
-const StyledLogo = styled.img`
-width: 150px;
-`;
