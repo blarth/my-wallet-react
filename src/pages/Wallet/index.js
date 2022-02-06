@@ -71,7 +71,7 @@ export default function Wallet({nameUser}) {
         {entries.length === 0
           ? "Não há registros de entrada ou saída"
           : entries?.map((entry, i) => {
-              return <Entry key={i} {...entry} />;
+              return <Entry key={i} {...entry} loadEntries={loadEntries}/>;
             })}
         <ContainerBalance>
           <span>SALDO</span>

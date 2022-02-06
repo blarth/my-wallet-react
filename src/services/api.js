@@ -44,6 +44,12 @@ function getEntryById(idEntry, token){
   
     return promise
 }
+function deleteEntryById(idEntry, token){
+  const config = createConfig(token)
+  const promise = axios.delete(`${BASE_URL}/entry/${idEntry}`, config );
+  
+    return promise
+}
 
   const api = {
     login,
@@ -52,7 +58,7 @@ function getEntryById(idEntry, token){
     registerTransaction,
     registerChange,
     getEntryById,
-    
+    deleteEntryById
   }
   
   export default api;

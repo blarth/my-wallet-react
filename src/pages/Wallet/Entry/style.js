@@ -40,9 +40,22 @@ color: ${(props) => props.type === "in" ? "#03AC00" : "#C70000"};
 padding-left: 70px;
 `;
 
+const DeleteSymbol = styled.p`
+width: 10px;
+color: #C6C6C6;
+font-family: Raleway;
+font-size: 16px;
+letter-spacing: 0em;
+text-align: center;
+padding-left: 60px;
+
+
+`;
+
 export {
     TextValue,
     Description,
     TextDate,
     Container,
+    DeleteSymbol,
 }
