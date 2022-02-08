@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import {Link} from "react-router-dom"
 
 const ContainerMenu = styled.div`
   width: 90%;
@@ -47,11 +48,17 @@ const In = styled.div`
   width: 155px;
   border-radius: 5px;
   background: #a328d6;
+  
 
   img {
     margin-top: 10px;
     margin-left: 10px;
   }
+  @media screen and (max-width: 376px){
+    height: 100px;
+    width: 130px;
+  }
+
 `;
 const Out = styled.div`
   height: 114px;
@@ -61,6 +68,10 @@ const Out = styled.div`
   img {
     margin-top: 10px;
     margin-left: 10px;
+  }
+  @media screen and (max-width: 376px){
+    height: 100px;
+    width: 130px;
   }
 `;
 
@@ -76,6 +87,9 @@ const NewEntrie = styled.p`
   margin-top: 30px;
   margin-left: 10px;
   margin-bottom: 10px;
+  @media screen and (max-width: 376px){
+    padding-bottom: 20px;
+  }
 `;
 
 const ContainerBalance = styled.div`
@@ -103,6 +117,29 @@ const Balance = styled.p`
   color: ${(props) =>
     props.balanceType === "positive" ? "#03AC00" : "#C70000"};
 `;
+const Button = styled(Link)`
+  all: unset;
+  box-sizing: border-box;
+  cursor: pointer;
+
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 32px;
+
+  font-style: normal;
+  font-weight: bold;
+  font-size: 17px;
+  line-height: 20px;
+
+  padding: 10px;
+  
+  background: #A328D6;
+  border-radius: 5px;
+  
+`;
 
 export {
     Balance,
@@ -115,4 +152,5 @@ export {
     Icon,
     NameUser,
     ContainerMenu,
+    Button
 }
