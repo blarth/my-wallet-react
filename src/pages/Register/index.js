@@ -16,12 +16,12 @@ export default function Register() {
   }
 
   async function handleSubmit(e) {
-      
+    e.preventDefault();
     if(formData.password !== formData.confirmpassword){
         alert("Passwords should match")
         return
     }
-    e.preventDefault();
+    
     delete formData.confirmpassword
     
     try {
