@@ -18,6 +18,7 @@ import {
   Icon,
   NameUser,
   ContainerMenu,
+  Button
 } from "./style"
 
 export default function Wallet({nameUser}) {
@@ -79,18 +80,18 @@ export default function Wallet({nameUser}) {
         </ContainerBalance>
       </ContainerWallet>
       <ContainerEntries>
-        <Link to="/in">
+        <Button to="/in">
           <In>
             <img src={Plus} alt="erro"></img>
             <NewEntrie>Nova entrada</NewEntrie>
           </In>
-        </Link>
-        <Link to="/out">
+        </Button>
+        <Button to="/out">
           <Out>
             <img src={Minus} alt="erro"></img>
             <NewEntrie>Nova saída</NewEntrie>
           </Out>
-        </Link>
+        </Button>
       </ContainerEntries>
     </Container>
   );
