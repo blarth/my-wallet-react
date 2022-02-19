@@ -2,6 +2,10 @@
 
 # my-Wallet
 
+
+https://user-images.githubusercontent.com/79117658/154815360-8b1e9fb1-d9c8-4cf7-82ca-8563937f92d8.mp4
+
+
 An easy digital wallet app, to help you manage your finances or to start doing it.
 
 my-wallet-orcin.vercel.app
