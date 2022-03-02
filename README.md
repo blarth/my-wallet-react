@@ -3,12 +3,13 @@
 # my-Wallet
 
 
-https://user-images.githubusercontent.com/79117658/154815360-8b1e9fb1-d9c8-4cf7-82ca-8563937f92d8.mp4
-
-
 An easy digital wallet app, to help you manage your finances or to start doing it.
 
-my-wallet-orcin.vercel.app
+To try it yourself!
+[Click Here](my-wallet-orcin.vercel.app)
+
+https://user-images.githubusercontent.com/79117658/154815360-8b1e9fb1-d9c8-4cf7-82ca-8563937f92d8.mp4
+
 
 ## About
 
@@ -45,22 +46,31 @@ The following tools and frameworks were used in the construction of the project:
 <img src="https://camo.githubusercontent.com/e6b67b27998fca3bccf4c0ee479fc8f9de09d91f389cccfbe6cb1e29c10cfbd7/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f637373332d2532333135373242362e7376673f7374796c653d666f722d7468652d6261646765266c6f676f3d63737333266c6f676f436f6c6f723d7768697465" alt="err">
 <img src="https://camo.githubusercontent.com/aeddc848275a1ffce386dc81c04541654ca07b2c43bbb8ad251085c962672aea/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f6a6176617363726970742d2532333332333333302e7376673f7374796c653d666f722d7468652d6261646765266c6f676f3d6a617661736372697074266c6f676f436f6c6f723d253233463744463145" alt="err">
 
-## Development mode
+## How to run!
 In order to run this on dev mode you have to use React environment.
 
 So you have to:
 
  ### Clone this repository
-
-$ git clone https://github.com/blarth/my-wallet
-
+ 
+```
+ git clone https://github.com/blarth/my-wallet
+```
+ 
  ### Install dependencies
+Enter the git directory that was created in your machine and then run this command;
 
-$ npm install
+```
+npm install
+```
 
 ### Run on your machine
+```
+ npm run start
+```
 
-$ npm run start
 ### You can also use the production mode with:
+```
+ npm build
+```
 
-$ npm build
